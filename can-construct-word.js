@@ -1,24 +1,10 @@
 "use strict";
-// add whatever parameters you deem necessary & write doc comment
-// canConstructWord»
-// This should accept two strings: word and letters.
-// It should return true if the word can be built with the letters;
-// otherwise, it should return false.
 
-// There are only lowercase letters
-// (with no spaces or punctuation) in both word and letters.
 
-// Constraints: time complexity: O(w + k)
-// (if w is the length of word and k is the length of letters)
-
-// canConstructWord('aa', 'abc');
-// false -- can't build "aa" with only 1 "a"
-
-// canConstructWord('abc', 'dcba');
-// true -- can build "abc" with letters "abcd"
-
-// canConstructWord("aabb", "bcabad");
-// true -- can build "aabbcc" with those letters
+/* This function takes one argument, items and iterates across items creating
+an object consisting of keys equal to each element of items and a value of the
+number of occurences of that element
+*/
 
 function getFrequencyCounter(items) {
   const freqs = {};
@@ -31,6 +17,10 @@ function getFrequencyCounter(items) {
   return freqs;
 }
 
+/* This function takes two arguments, a word and a string of letters.
+It returns true if letters contains all the letters necessary to spell word
+Otherwise it returns false.
+*/
 function canConstructWord(word, letters) {
   const wordObj = getFrequencyCounter(word);
   const lettersObj = getFrequencyCounter(letters);
@@ -40,7 +30,6 @@ function canConstructWord(word, letters) {
   }
 
   for (let letter in wordObj) {
-    // if letters[letter] < wordObj[letter], return false;
     if (!letter in lettersObj) {
       return false;
     } else if (lettersObj[letter] < wordObj[letter]) {
