@@ -1,3 +1,5 @@
+"use strict";
+
 /* This function will accept two arguments, an array of keys, and
 an array of values. The function will return an object with each key from keys given a value at the corresponding
 index in values. If there are not enough corresponding elements in values, set any additional
