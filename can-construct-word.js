@@ -1,6 +1,5 @@
 "use strict";
 
-
 /* This function takes one argument, items and iterates across items creating
 an object consisting of keys equal to each element of items and a value of the
 number of occurences of that element

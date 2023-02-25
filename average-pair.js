@@ -7,7 +7,6 @@
  * */
 
 function averagePair(nums, targetAvg) {
-
   let left = 0;
   let right = nums.length - 1;
 
@@ -18,10 +17,9 @@ function averagePair(nums, targetAvg) {
 
     if (avg < targetAvg) {
       left++;
-    } else if (avg > targetAvg) {
+    } else {
       right--;
     }
   }
   return false;
 }
-
